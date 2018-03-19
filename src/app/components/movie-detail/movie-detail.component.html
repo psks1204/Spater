@@ -1,0 +1,90 @@
+<div class="moviedetailbg2">
+  <div class="MovieDetailBg">
+    <img class="img-fluid-bg" *ngIf="movie?.poster_path" src="https://image.tmdb.org/t/p/original{{movie?.backdrop_path}}" alt="{{movie?.title}}"
+    />
+  </div>
+</div>
+<div class="detail-container">
+  <div fxLayout='row' fxLayout.xs="column">
+    <div fxFlex="70%" fxFlex.lt-sm="100%" class="Movie-info">
+      <h1 fxShow="false" fxShow.gt-sm>{{movie?.title}}</h1>
+      <h2 fxShow="false" fxShow.lt-md>{{movie?.title}}</h2>
+
+      <span class="list-inline">
+        <span class="list-inline-item"><mat-icon>star</mat-icon> {{movie?.vote_average}}</span>
+        <span class="list-inline-item">{{movie?.release_date}}</span>
+        <span class="list-inline-item">{{movie?.runtime}} Min</span>
+      </span>
+
+      <div fxShow="false" fxShow.lt-md class="xs-detail">
+        <div fxLayout='row'>
+          <dt fxFlex="15%">
+            <button mat-fab color="primary">
+              <mat-icon aria-label="Play Icon to play video">play_arrow</mat-icon>
+            </button>
+          </dt>
+          <span fxFlex="2%" fxFlex.xs="10%"></span>
+          <dd fxFlex.xs="40%" fxFlex="25%">
+            <h3>Play</h3>
+            <mat-progress-bar mode="determinate" value="75"></mat-progress-bar>
+          </dd>
+        </div>
+        <div fxLayout='row'>
+          <h5 fxFlex="100%">
+            By clicking play you agree to our Terms of Use.
+          </h5>
+        </div>
+      </div>
+
+      <p class="overview">{{movie?.overview}}</p>
+
+      <div fxLayout='row' class="detail" fxLayout.xs="column">
+        <dt fxFlex="15%" fxFlex.xs="100%">Genres</dt>
+        <span fxFlex="5%" fxShow="false" fxShow.gt-xs></span>
+        <dd fxFlex="40%" fxFlex.xs="100%">
+          <span *ngFor="let genre of genres; let i=index"> &nbsp;{{genre.name}}</span>
+        </dd>
+      </div>
+      <div fxLayout='row' class="detail" fxLayout.xs="column">
+        <dt fxFlex="15%" fxFlex.xs="100%">Subtitle</dt>
+        <span fxFlex="5%" fxShow="false" fxShow.gt-xs></span>
+        <dd fxFlex="40%" fxFlex.xs="100%">
+          <span>English [CC]</span>
+        </dd>
+      </div>
+      <div fxLayout='row' class="detail" fxLayout.xs="column">
+        <dt fxFlex="15%" fxFlex.xs="100%">Language</dt>
+        <span fxFlex="5%" fxShow="false" fxShow.gt-xs></span>
+        <dd fxFlex="40%" fxFlex.xs="100%">
+          <span>{{movie?.original_language}}</span>
+        </dd>
+      </div>
+      <div fxShow="false" fxShow.gt-sm>
+        <div fxLayout='row'>
+          <dt fxFlex.xs="15%" fxFlex="10%">
+            <button mat-fab color="primary">
+              <mat-icon aria-label="Play Icon to play video">play_arrow</mat-icon>
+            </button>
+          </dt>
+          <span fxFlex="2%" fxFlex.xs="10%"></span>
+          <dd fxFlex.xs="40%" fxFlex="25%">
+            <h3>Play</h3>
+            <mat-progress-bar mode="determinate" value="75"></mat-progress-bar>
+          </dd>
+        </div>
+        <div fxLayout='row' class="detail">
+          <h5 fxFlex="100%">
+            By clicking play you agree to our Terms of Use.
+          </h5>
+        </div>
+      </div>
+    </div>
+
+    <div fxFlex="30%" fxShow="false" fxShow.gt-xs>
+      <img class="img-fluid" *ngIf="movie?.poster_path" src="https://image.tmdb.org/t/p/w500{{movie?.poster_path}}" alt="{{movie?.name}}">
+    </div>
+
+  </div>
+  <mat-divider color="primary"></mat-divider>
+  
+</div>

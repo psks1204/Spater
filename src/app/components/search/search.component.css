@@ -1,0 +1,33 @@
+.search-form-field{
+  margin-top: 10px;  
+  width: 100%;
+
+}
+
+.search-container {
+  background-color: transparent;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .search-container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .search-container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .search-container {
+    width: 1170px;
+  }
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,73 @@
+
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon mat-list-icon>account_circle</mat-icon>
+          Name
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon mat-list-icon>live_tv</mat-icon>
+          TV
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon mat-list-icon>ondemand_video</mat-icon>
+          Movies
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon mat-list-icon>input</mat-icon>
+          Logout
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <button mat-button (click)="sidenav.open()">
+      <mat-icon>menu</mat-icon>
+      {{title}}</button>
+    <!-- This fills the remaining space of the current row -->
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+      <button mat-button routerLink="/products">TV</button>
+      <button mat-button routerLink="/dashboard">Movies</button>
+    </div>
+    <span class="fill-remaining-space"></span>
+    <button routerLink="/search" mat-icon-button>
+      <mat-icon aria-label="Example icon-button with a search option">search</mat-icon>
+    </button>
+    <!-- <form class="example-form" fxShow="false" fxShow.gt-sm>
+      <mat-form-field class="example-full-width" color="accent">
+        <input type="text" matInput placeholder="Search">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </form> -->
+    <!--<button mat-icon-button [matMenuTriggerFor]="search" fxHide="false" fxHide.gt-sm>
+      <mat-icon aria-label="Example icon-button with a Search sign">search</mat-icon>
+    </button>
+    <mat-menu #search="matMenu">
+      <form class="example-form">
+        <mat-form-field class="example-full-width" color="accent">
+          <input type="text" matInput placeholder="Search">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </form>
+    </mat-menu> -->
+    <span>&nbsp;</span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon aria-label="Example icon-button with a Account sign">account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Accounts</button>
+      <button mat-menu-item>Logout</button>
+    </mat-menu>
+
+  </mat-toolbar>
+
+<!--</mat-sidenav-container>-->

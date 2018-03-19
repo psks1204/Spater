@@ -1,20 +1,83 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav>
+        <mat-nav-list>
+            <mat-list-item>
+                <button mat-button>
+                    <mat-icon mat-list-icon>account_circle</mat-icon>
+                    Name
+                </button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button routerLink="/home">
+                    <mat-icon mat-list-icon>account_balance</mat-icon>
+                    Home
+                </button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button>
+                    <mat-icon mat-list-icon>live_tv</mat-icon>
+                    TV
+                </button>
+            </mat-list-item>
+    
+            <mat-list-item>
+                <button mat-button >
+                    <mat-icon mat-list-icon>ondemand_video</mat-icon>
+                    Movies
+                </button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button>
+                    <mat-icon mat-list-icon>input</mat-icon>
+                    Logout
+                </button>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    
+    <mat-toolbar color="primary">
+        <button mat-button (click)="sidenav.open()">
+            <mat-icon>menu</mat-icon>
+            {{title}}</button>
+        <!-- This fills the remaining space of the current row -->
+        <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+            <button mat-button routerLink="/home">Home</button>
+            <button mat-button routerLink="/products">TV</button>
+            <button mat-button routerLink="/dashboard">Movies</button>
+        </div>
+        <span class="fill-remaining-space"></span>
+        <button routerLink="/search" mat-icon-button>
+            <mat-icon aria-label="Example icon-button with a search option">search</mat-icon>
+        </button>
+        <!-- <form class="example-form" fxShow="false" fxShow.gt-sm>
+          <mat-form-field class="example-full-width" color="accent">
+            <input type="text" matInput placeholder="Search">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+        </form> -->
+        <!--<button mat-icon-button [matMenuTriggerFor]="search" fxHide="false" fxHide.gt-sm>
+          <mat-icon aria-label="Example icon-button with a Search sign">search</mat-icon>
+        </button>
+        <mat-menu #search="matMenu">
+          <form class="example-form">
+            <mat-form-field class="example-full-width" color="accent">
+              <input type="text" matInput placeholder="Search">
+              <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+          </form>
+        </mat-menu> -->
+        <span>&nbsp;</span>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon aria-label="Example icon-button with a Account sign">account_circle</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Accounts</button>
+            <button mat-menu-item>Logout</button>
+        </mat-menu>
+    
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+    
+</mat-sidenav-container>
 

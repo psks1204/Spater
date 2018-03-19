@@ -1,0 +1,140 @@
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.tvDetailBg {
+  display:inline-block;
+  background: linear-gradient(to right,#000000 40%,rgba(17, 17, 17, 0) 60%)/* W3C */
+  
+}
+
+.tvdetailbg2{
+  display:inline-block;
+  background: linear-gradient(to top,#000000 10%,rgba(17, 17, 17, 0) 80%)/* W3C */
+}
+
+.img-fluid-bg {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  z-index:-1;
+  display: block;
+}
+
+
+.detail-container{
+  position: absolute;
+  top: 2rem;
+  right: auto;
+  left: auto;
+  margin-top: 3rem;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.tv-info{
+  padding-top: 3rem;
+}
+
+@media (max-width: 599px) {
+  .tvDetailBg, .tvdetailbg2{
+    display: inline-block;
+    background: linear-gradient(to top,#000000 0,rgba(17, 17, 17, 0) 80%)/* W3C */
+  }
+
+  .detail-container{
+    top: 8rem;
+  }
+
+  .tv-info{
+    padding-top: 0rem;
+  }
+}
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+  color: rgb(211, 211, 211);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+
+p.overview{
+  margin-top: 1rem;
+}
+
+.episode-list-inline {
+  padding-left: 0;
+  list-style: none;
+  color: rgb(211, 211, 211);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
+
+.list-inline-item:not(:last-child) {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.episode-list-inline-item {
+  display: inline-block;
+  margin-top: 0.7rem;
+}
+
+.episode-list-inline-item:not(:last-child) {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+dt{
+  font-weight: 600;
+}
+
+dd{
+  color: rgb(211, 211, 211);
+}
+
+.detail{
+  margin-bottom: 2rem;
+}
+
+.xs-detail{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.episode-detail{
+  margin-top: 1rem;
+}
+
+.img-detail-episode{
+  margin-top: 0.25rem;
+  padding: 0.25rem;
+  background-color: rgb(19, 18, 18);
+  border: 1px solid #1a1b1b;
+  border-radius: 0.25rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.md-episode{
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
